@@ -8,4 +8,10 @@
 PersonType.create(persontype: 'Customer')
 PersonType.create(persontype: 'Medic')
 PersonType.create(persontype: 'Representative')
+City.create(city: 'Tegucigalpa')
+City.create(city: 'San Pedro Sula')
+City.create(city: 'La Ceiba')
+City.create(city: 'Comayagua')
+City.create(city: 'Choluteca')
+
 
