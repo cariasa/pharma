@@ -15,10 +15,12 @@ class ClinicsController < ApplicationController
   # GET /clinics/new
   def new
     @clinic = Clinic.new
+    @people = Person.all
   end
 
   # GET /clinics/1/edit
   def edit
+    @people = Person.all
   end
 
   # POST /clinics
@@ -35,7 +37,8 @@ class ClinicsController < ApplicationController
         format.json { render json: @clinic.errors, status: :unprocessable_entity }
       end
     end
-    @people = People.where(:id => params[:clinics_people])
+#    @clinic = Clinic.new(params[:clinic])
+    @people = Person.where(:id => params[:clinics_people])
     @clinic.people << @people
   end
 
@@ -52,7 +55,7 @@ class ClinicsController < ApplicationController
       end
     end
     @clinic = Event.find(params[:id])
-    @people = People.where(:id => params[:clinics_people])
+    @people = Person.where(:id => params[:clinics_people])
     @clinic.people.destroy_all
     @clinic.people << @people
   end
@@ -75,6 +78,6 @@ class ClinicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clinic_params
-      params.require(:clinic).permit(:clinic, :address, :city_id)
+      params.require(:clinic).permit(:clinic, :address, :city_id, :person_ids => [])
     end
 end

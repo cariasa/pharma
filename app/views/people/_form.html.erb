@@ -48,8 +48,9 @@
     <%= f.collection_select(:specialty_id, Specialty.all, :id, :specialty) %>
   </div>
   <div class="field">
-    <%= f.label :clinics %><br>
-    <%= select_tag "clinics_people", options_from_collection_for_select(Clinics.all, 'id', 'name',@clinic.people.map{|j| j.id}), :multiple => true %>
+    <%= f.label 'Clinics' %><br>
+    <%= collection_check_boxes(:person, :clinic_ids, @clinics, :id, :clinic) %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
