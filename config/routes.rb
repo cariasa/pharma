@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :clinics_people
+  resources :clinics
+  resources :specialties
   resources :people
   resources :cities
   resources :persontypes

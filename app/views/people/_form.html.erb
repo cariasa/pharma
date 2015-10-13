@@ -43,6 +43,14 @@
     <%= f.label :city_id %><br>
     <%= f.collection_select(:city_id, City.all, :id, :city) %>
   </div>
+  <div class="field">
+    <%= f.label :specialty_id %><br>
+    <%= f.collection_select(:specialty_id, Specialty.all, :id, :specialty) %>
+  </div>
+  <div class="field">
+    <%= f.label :clinics %><br>
+    <%= select_tag "clinics_people", options_from_collection_for_select(Clinics.all, 'id', 'name',@clinic.people.map{|j| j.id}), :multiple => true %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

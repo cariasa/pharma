@@ -10,4 +10,5 @@ class Person < ActiveRecord::Base
 	validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
 	belongs_to :city
 	belongs_to :persontype
+	has_and_belongs_to_many :clinics
 end

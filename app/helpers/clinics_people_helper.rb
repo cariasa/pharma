@@ -1,0 +1,2 @@
+module ClinicsPeopleHelper
+end
