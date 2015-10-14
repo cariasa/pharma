@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Pharma App</title>
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<h1>Bienvenidos al Pharma App</h1>
-		<p>Esta es una aplicación desarrollada para JC</p>
-	</body>
-</html>
+<div class="center jumbotron">
+  <h1>Bienvenidos al Pharma App</h1>
+
+  <h2>
+    Esta es la página principal para la Pharma App desarrollada para JC
+  </h2>
+
+  <%= link_to "Ingresa al Sistema", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+
+<%= link_to image_tag("pharma.png", size: "37x36", alt: "Pharma App"),
+           root_path %>
 
