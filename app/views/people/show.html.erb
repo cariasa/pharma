@@ -26,18 +26,28 @@
 </p>
 
 <p>
-  <strong>Idperson:</strong>
+  <strong>Person ID:</strong>
   <%= @person.idperson %>
 </p>
 
 <p>
-  <strong>Persontype:</strong>
-  <%= @person.persontype_id %>
+  <strong>Person Type:</strong>
+  <%= @person.persontype.persontype %>
 </p>
 
 <p>
   <strong>City:</strong>
-  <%= @person.city_id %>
+  <%= @person.city.city %>
+</p>
+
+<p>
+  <strong>Specialty:</strong>
+  <%= @person.specialty.specialty %>
+</p>
+
+<p>
+  <strong>Clinics:</strong>
+  <%= @person.clinics.map{|c| c.clinic}.join(', ') %>
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
