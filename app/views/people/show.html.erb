@@ -46,5 +46,10 @@
   <%= @person.clinics.map{|c| c.clinic}.join(', ') %>
 </p>
 
+<p>
+  <strong>Clinics:</strong>
+  <%= @person.persontypes.map{|c| c.persontype}.join(', ') %>
+</p>
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

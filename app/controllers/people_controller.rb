@@ -16,11 +16,13 @@ class PeopleController < ApplicationController
   def new
     @person = Person.new
     @clinics = Clinic.all
+    @persontypes = Persontype.all
   end
 
   # GET /people/1/edit
   def edit
     @clinics = Clinic.all
+    @persontypes = Persontype.all
   end
 
   # POST /people
