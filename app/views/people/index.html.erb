@@ -11,7 +11,6 @@
       <th>Email</th>
       <th>Birthday</th>
       <th>Person ID</th>
-      <th>Person Type</th>
       <th>City</th>
       <th>Specialty</th>
       <th>Clinics</th>
@@ -28,7 +27,6 @@
         <td><%= person.email %></td>
         <td><%= person.birthday %></td>
         <td><%= person.idperson %></td>
-        <td><%= person.persontype.persontype %></td>
         <td><%= person.city.city %></td>
         <td><%= person.specialty.specialty %></td>
         <td><%= person.clinics.map{|c| c.clinic}.join(', ')%></td>

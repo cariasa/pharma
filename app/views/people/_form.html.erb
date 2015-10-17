@@ -36,10 +36,6 @@
     <%= f.text_field :idperson %>
   </div>
   <div class="field">
-    <%= f.label :persontype_id %><br>
-    <%= f.collection_select(:persontype_id, Persontype.all, :id, :persontype) %>
-  </div>
-  <div class="field">
     <%= f.label :city_id %><br>
     <%= f.collection_select(:city_id, City.all, :id, :city) %>
   </div>

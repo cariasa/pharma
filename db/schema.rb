@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013013632) do
+ActiveRecord::Schema.define(version: 20151017202116) do
+
+  create_table "People", force: :cascade do |t|
+    t.string   "fullname"
+    t.string   "address"
+    t.string   "telephone"
+    t.string   "email"
+    t.date     "birthday"
+    t.string   "idperson"
+    t.integer  "city_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "specialty_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string   "city"
@@ -30,20 +43,6 @@ ActiveRecord::Schema.define(version: 20151013013632) do
   create_table "clinics_people", force: :cascade do |t|
     t.integer "clinic_id"
     t.integer "person_id"
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string   "fullname"
-    t.string   "address"
-    t.string   "telephone"
-    t.string   "email"
-    t.date     "birthday"
-    t.string   "idperson"
-    t.integer  "persontype_id"
-    t.integer  "city_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "specialty_id"
   end
 
   create_table "persontypes", force: :cascade do |t|
