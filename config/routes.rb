@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   resources :clinics_people
