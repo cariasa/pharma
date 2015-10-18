@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
+  get 'newuser' => 'users#new'
   resources :clinics_people
   resources :clinics
   resources :specialties
@@ -9,6 +11,9 @@ Rails.application.routes.draw do
   resources :cities
   resources :persontypes
   resources :person_types
+  
+  resources :users
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

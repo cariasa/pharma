@@ -5,15 +5,19 @@
     Esta es la página principal para la Pharma App desarrollada para JC
   </h2>
 
-  <%= link_to "Ingresa al Sistema", '#', class: "btn btn-lg btn-primary" %>
+  <% if not user_signed_in? %>
+    <%= link_to "Ingresa al Sistema", new_user_session_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 
-<div class="center">
-	<%= link_to "Personas", 'people', class: "btn" %>
-	<%= link_to "Ciudades", 'cities', class: "btn" %>
-	<%= link_to "Especialidades", 'specialties', class: "btn" %>
-	<%= link_to "Clínicas", 'clinics', class: "btn" %>
-</div>
+<% if user_signed_in? %>
+  <div class="center">
+  	<%= link_to "Personas", 'people', class: "btn" %>
+  	<%= link_to "Ciudades", 'cities', class: "btn" %>
+  	<%= link_to "Especialidades", 'specialties', class: "btn" %>
+  	<%= link_to "Clínicas", 'clinics', class: "btn" %>
+  </div>
+<% end %>
 <%= link_to image_tag("pharma.png", size: "37x36", alt: "Pharma App"),
            root_path %>
 
