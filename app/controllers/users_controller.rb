@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   #before_filter :authorize_admin, only: [:new, :destroy, :index, :create, :show]
   before_filter :authorize_admin, except: [:update, :edit]
+  #before_filter :authorize_admin, except: [:index, :show]
 
 
   # GET /users
@@ -61,8 +62,8 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find_by(email: user_params[:email])
-
+    #@user = User.find_by(email: user_params[:email])
+    @user = User.find(current_user.id)
     respond_to do |format|
       if @user.update_attributes(user_params)
         format.html { redirect_to @user, :notice => 'User was successfully updated.' }
@@ -93,12 +94,5 @@ class UsersController < ApplicationController
 
 
 
-  def authorize_admin
-  	if not user_signed_in?
-  		redirect_to root_path, alert: 'Acceso Denegado A'
-  	else
-  		redirect_to root_path, alert: 'Acceso Denegado B' unless current_user.admin
-  	end
-  end
-
+  
 end

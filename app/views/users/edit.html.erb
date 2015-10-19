@@ -1,7 +1,13 @@
 <h2>Edit user</h2>
 
-<%= render 'form' %>
-<p></p>
-<%= render 'passwords' %>
-
-<%= link_to 'All users', users_path %>
+<% if current_user.admin? || current_user.id.to_i == params[:id].to_i %> 
+	<%= render 'form' %>
+	<p></p>
+	<%= render 'passwords' %>
+<% else %>
+	<% if current_user.admin? %>
+		<%= link_to 'All users', users_path %>
+	<% else %>
+		<% redirect_to root_path, alert: 'Acceso Denegado' %>
+	<% end %>
+<% end %>
