@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018045125) do
+ActiveRecord::Schema.define(version: 20151027023829) do
 
   create_table "People", force: :cascade do |t|
     t.string   "fullname"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20151018045125) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "specialty_id"
+  end
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "brand"
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cities", force: :cascade do |t|
@@ -45,6 +58,15 @@ ActiveRecord::Schema.define(version: 20151018045125) do
     t.integer "person_id"
   end
 
+  create_table "medications", force: :cascade do |t|
+    t.string   "medication"
+    t.integer  "category_id"
+    t.integer  "brand_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "people_persontypes", force: :cascade do |t|
     t.integer "persontype_id"
     t.integer "person_id"
@@ -56,10 +78,33 @@ ActiveRecord::Schema.define(version: 20151018045125) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "presentations", force: :cascade do |t|
+    t.string   "presentation"
+    t.integer  "concentration"
+    t.string   "units"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "medication_id"
+    t.integer  "presentation_id"
+    t.integer  "substance_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "specialties", force: :cascade do |t|
     t.string   "specialty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "substances", force: :cascade do |t|
+    t.string   "substance"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

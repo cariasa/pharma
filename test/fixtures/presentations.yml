@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  presentation: MyString
+  concentration: 1
+  units: MyString
+
+two:
+  presentation: MyString
+  concentration: 1
+  units: MyString

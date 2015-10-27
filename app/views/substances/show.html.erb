@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Substance:</strong>
+  <%= @substance.substance %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @substance.description %>
+</p>
+
+<%= link_to 'Edit', edit_substance_path(@substance) %> |
+<%= link_to 'Back', substances_path %>

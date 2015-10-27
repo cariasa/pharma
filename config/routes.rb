@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   resources :cities
   resources :persontypes
   resources :person_types
+  resources :products
+  resources :medications
+  resources :substances
+  resources :presentations
+  resources :categories
+  resources :brands
   
   resources :users
   
