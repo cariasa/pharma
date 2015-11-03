@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   resources :products
   resources :medications
   resources :substances
-  resources :presentations
   resources :categories
   resources :brands
   

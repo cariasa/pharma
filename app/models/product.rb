@@ -4,6 +4,5 @@ class Product < ActiveRecord::Base
 	validates :substance_id, presence: true
 
 	belongs_to :medication
-	belongs_to :presentation
 	belongs_to :substance
 end
