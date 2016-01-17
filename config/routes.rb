@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :products
+  resources :presentations
   devise_for :users
   
   get 'help'    => 'static_pages#help'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :substances
   resources :categories
   resources :brands
+  resources :presentations
   
   resources :users
   
@@ -72,6 +75,5 @@ Rails.application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  #     #   end
 end

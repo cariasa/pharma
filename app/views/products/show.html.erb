@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Medication:</strong>
-  <%= @product.medication_id %>
+  <strong>Product:</strong>
+  <%= @product.product %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category_id %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @product.brand_id %>
 </p>
 
 <p>
   <strong>Presentation:</strong>
   <%= @product.presentation_id %>
-</p>
-
-<p>
-  <strong>Substance:</strong>
-  <%= @product.substance_id %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

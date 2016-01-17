@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :medication_id %><br>
-    <%= f.number_field :medication_id %>
+    <%= f.label :product %><br>
+    <%= f.text_field :product %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :brand_id %><br>
+    <%= f.number_field :brand_id %>
   </div>
   <div class="field">
     <%= f.label :presentation_id %><br>
     <%= f.number_field :presentation_id %>
-  </div>
-  <div class="field">
-    <%= f.label :substance_id %><br>
-    <%= f.number_field :substance_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

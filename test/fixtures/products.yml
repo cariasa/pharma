@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  medication_id: 1
+  product: MyString
+  category_id: 1
+  brand_id: 1
   presentation_id: 1
-  substance_id: 1
 
 two:
-  medication_id: 1
+  product: MyString
+  category_id: 1
+  brand_id: 1
   presentation_id: 1
-  substance_id: 1
