@@ -3,4 +3,5 @@ class Brand < ActiveRecord::Base
 	validates :person_id, presence: true
 	belongs_to :medication
 	belongs_to :person
+	has_many :products
 end

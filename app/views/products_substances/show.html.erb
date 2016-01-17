@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @products_substance.product.product %>
+</p>
+
+<p>
+  <strong>Substance:</strong>
+  <%= @products_substance.substance.substance %>
+</p>
+
+<p>
+  <strong>Concentration:</strong>
+  <%= @products_substance.concentration %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @products_substance.units %>
+</p>
+
+<%= link_to 'Edit', edit_products_substance_path(@products_substance) %> |
+<%= link_to 'Back', products_substances_path %>
