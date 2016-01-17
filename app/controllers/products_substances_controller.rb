@@ -4,7 +4,7 @@ class ProductsSubstancesController < ApplicationController
   # GET /products_substances
   # GET /products_substances.json
   def index
-    @products_substances = ProductsSubstance.all
+    @products_substances = ProductsSubstance.where(product_id: params[:id])
   end
 
   # GET /products_substances/1
@@ -25,7 +25,7 @@ class ProductsSubstancesController < ApplicationController
   # POST /products_substances.json
   def create
     @products_substance = ProductsSubstance.new(products_substance_params)
-
+    puts "hola"
     respond_to do |format|
       if @products_substance.save
         format.html { redirect_to @products_substance, notice: 'Products substance was successfully created.' }

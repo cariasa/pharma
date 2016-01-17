@@ -2,7 +2,7 @@
 
 <h1>Listing Brands</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Brand</th>
@@ -15,7 +15,7 @@
     <% @brands.each do |brand| %>
       <tr>
         <td><%= brand.brand %></td>
-        <td><%= brand.person_id %></td>
+        <td><%= brand.person.fullname %></td>
         <td><%= link_to 'Show', brand %></td>
         <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
         <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -2,7 +2,7 @@
 
 <h1>Listing Products Substances</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Product</th>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Products substance', new_products_substance_path %>
+<%= link_to 'New Products substance', substances_new_path(params[:id]) %>
